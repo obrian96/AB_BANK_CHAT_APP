@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'ab-bank-chat-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FBCF8AB2A3DB411BA5A98E91D7150746 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F0D5187753FF427E8C532B68701B7D49 }}
