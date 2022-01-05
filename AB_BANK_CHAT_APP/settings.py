@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-&572q93uq(&pmvpf#5y@-ov03i))=z=v36azejb1negb7kwr*m
 DEBUG = False
 
 ALLOWED_HOSTS = ['abbankchat.azurewebsites.net']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 
