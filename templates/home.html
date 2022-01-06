@@ -25,8 +25,15 @@
           <div class="main-card mb-3 card mt-5 shadow bg-white rounded">
             <div class="card-body">
               <h1 class="card-title text-center text-primary h1">
-                AB-BANK Real-Time Chat App
+                AB-BANK Real-Time Chat Application
+
+
               </h1>
+
+              <h6 class="text-center ">
+                Welcome to the AB BANK live Chat, Please provide the following
+                Information.
+              </h6>
 
               <hr class="bg-primary border-2 border-top border-primary" />
               <form id="post-form" method="POST" action="checkview">
@@ -38,11 +45,11 @@
                     name="username"
                     id="username"
                     class="form-control"
-                    placeholder="Joe Doe"
+                    placeholder="For Example Joe Doe"
                   />
                 </div>
                 <label for="room_name">How can we Help you?</label>
-                <select class="selectpicker col-12 text-center form-control">
+                <select class="selectpicker col-12 text-center form-control"  name="room_name" id="room_name">
                   <option value="Withdraw QUERY">Withdraw Query</option>
                   <option value="Deposit QUERY">Deposit Query</option>
                   <option value="Internet Banking">Internet Banking</option>
