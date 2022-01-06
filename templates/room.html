@@ -2,56 +2,24 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body {
-        margin: 0 auto;
-        max-width: 800px;
-        padding: 0 20px;
-      }
 
-      .container {
-        border: 2px solid #dedede;
-        background-color: #f1f1f1;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 10px 0;
-      }
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-      .darker {
-        border-color: #ccc;
-        background-color: #ddd;
-      }
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-      .container::after {
-        content: "";
-        clear: both;
-        display: table;
-      }
+    <title>AB-BANK Real-Time Chat App</title>
 
-      .container img {
-        float: left;
-        max-width: 60px;
-        width: 100%;
-        margin-right: 20px;
-        border-radius: 50%;
-      }
-
-      .container img.right {
-        float: right;
-        margin-left: 20px;
-        margin-right: 0;
-      }
-
-      .time-right {
-        float: right;
-        color: #aaa;
-      }
-
-      .time-left {
-        float: left;
-        color: #999;
-      }
-    </style>
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -59,14 +27,7 @@
     ></script>
   </head>
   <body>
-    <h2>{{room}} - Live Chat</h2>
-
-    <div id="display">
-      <!-- <div class="container darker">
-  <b>Tom</b><p>Hello Everyone, How Are You Guys Doing?</p>
-  <span class="time-left">20th, April 2021</span>
-</div> -->
-    </div>
+    <div id="display"></div>
 
     <script>
       $(document).ready(function () {
@@ -97,59 +58,66 @@
       });
     </script>
 
-    <div class="container">
-      <style>
-        input[type="text"],
-        select {
-          width: 100%;
-          padding: 12px 20px;
-          margin: 8px 0;
-          display: inline-block;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-        }
+    <div class="container h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-9 mx-auto">
+          <div class="main-card mb-3 card mt-5 shadow bg-white rounded">
+            <div class="card-body">
+              <h2 class="text-primary text-center">{{room}} - Live Chat</h2>
+              <hr class="bg-primary border-2 border-top border-primary" />
 
-        input[type="submit"] {
-          width: 100%;
-          background-color: #4caf50;
-          color: white;
-          padding: 14px 20px;
-          margin: 8px 0;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-        }
+              <form id="post-form">
+                {% csrf_token %}
+                <input
+                  type="hidden"
+                  name="username"
+                  id="username"
+                  value="{{username}}"
+                />
+                <input
+                  type="hidden"
+                  name="room_id"
+                  id="room_id"
+                  value="{{room_details.id}}"
+                />
 
-        input[type="submit"]:hover {
-          background-color: #45a049;
-        }
+                <input
+                  type="text"
+                  name="message"
+                  id="message"
+                  class="form-control"
+                />
 
-        div {
-          border-radius: 5px;
-          background-color: #f2f2f2;
-          padding: 20px;
-        }
-      </style>
-
-      <form id="post-form">
-        {% csrf_token %}
-        <input
-          type="hidden"
-          name="username"
-          id="username"
-          value="{{username}}"
-        />
-        <input
-          type="hidden"
-          name="room_id"
-          id="room_id"
-          value="{{room_details.id}}"
-        />
-        <input type="text" name="message" id="message" width="100px" />
-        <input type="submit" value="Send" />
-      </form>
+                <hr class="bg-primary border-2 border-bottom border-primary" />
+                <input
+                  type="submit"
+                  value="Send"
+                  class="btn btn-primary btn-lg mt-3 col-12"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 
   <script type="text/javascript">
