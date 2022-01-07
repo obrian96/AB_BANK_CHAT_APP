@@ -5,7 +5,7 @@ Welcome to the Real-Time Chat Application Developed for the purpose of Demostrat
 
 # Techologies Used 
 1. FrontEnd 
-- HTML/CSS , Bootstrap and CSS.
+- HTML/CSS , Bootstrap and AJAX Javascript.
 
 2.Backend 
 -  Django Python Framwork.
@@ -15,11 +15,11 @@ Welcome to the Real-Time Chat Application Developed for the purpose of Demostrat
 - Microsoft Azure. 
 
 4.Version Control 
- -Git and GitHub. 
+ - Git and GitHub. 
  
  # Requirements
- -Any Operating System (ie. MacOS X, Linux, Windows) with Python  installed for the respective OS.
- -Any IDE with Python  SDK installed (ie. Pycharm, VSCode, etc).
+ - Any Operating System (ie. MacOS X, Linux, Windows) with Python  installed for the respective OS.
+ - Any IDE with Python  SDK installed (ie. Pycharm, VSCode, etc).
  
  
  # Steps to Run Locally 
@@ -27,18 +27,18 @@ Welcome to the Real-Time Chat Application Developed for the purpose of Demostrat
  
  In the project files goto file called settings.py comment out 
  
-  -Change From DEBUG = False to DEBUG = True.
+  - Change From DEBUG = False to DEBUG = True.
 
- -Comment out this -  ALLOWED_HOSTS = ['abbankchat.azurewebsites.net'].
- -Comment out this -  SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https').
+ - Comment out this -  ALLOWED_HOSTS = ['abbankchat.azurewebsites.net'].
+ - Comment out this -  SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https').
  
  
  Under Middileware 
-  -Comment out 'whitenoise.middleware.WhiteNoiseMiddleware'.
+  - Comment out 'whitenoise.middleware.WhiteNoiseMiddleware'.
  
  in the requirements.txt 
-  -comment out django-crispy-forms.
-  -comment out whitenoise.
+  - comment out django-crispy-forms.
+  - comment out whitenoise.
   
   
   Finally 
