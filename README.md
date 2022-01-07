@@ -9,6 +9,7 @@ Welcome to the Real-Time Chat Application Developed for the purpose of Demostrat
 
 2.Backend 
 -  Django Python Framwork.
+-  sqlite
 
 3.Devops 
 - Microsoft Azure. 
